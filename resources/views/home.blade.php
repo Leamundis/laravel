@@ -26,24 +26,22 @@
 				                    </div>
 				                  </div>
 				              	 </div>
-				                <div class="col-md-2">
-				                  <div class="form-group">
-				                    <label for="date">Check-in:</label>
-				                    <div class="form-field">
-				                      <i class="icon icon-calendar2"></i>
-				                      <input type="text" id="date" class="form-control date" placeholder="Check-in date">
-				                    </div>
-				                  </div>
-				                </div>
-				                <div class="col-md-2">
-				                  <div class="form-group">
-				                    <label for="date">Check-out:</label>
-				                    <div class="form-field">
-				                      <i class="icon icon-calendar2"></i>
-				                      <input type="text" id="date" class="form-control date" placeholder="Check-out date">
-				                    </div>
-				                  </div>
-				                </div>
+												 <div class="col-md-3">
+														<div class="form-group">
+																<label for="max">Montant Max</label>
+																<div class="form-field">
+																		<input type="text" id="date" name="max" class="form-control" placeholder="Montant Max">
+																</div>
+														</div>
+												</div>
+												<div class="col-md-3">
+														<div class="form-group">
+																<label for="min">Montant Min</label>
+																<div class="form-field">
+																		<input type="text" id="date" name="min" class="form-control" placeholder="Montant Min">
+																</div>
+														</div>
+												</div>
 				                <div class="col-md-3">
 				                  <div class="form-group">
 				                    <label for="guests">Guest</label>
