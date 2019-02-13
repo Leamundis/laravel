@@ -15,13 +15,14 @@
 						</div>
 						<div class="tab-content">
 							<div id="flight" class="tab-pane fade in active">
-								<form method="post" class="colorlib-form">
+								<form method="post" class="colorlib-form" action="./tours">
+									@csrf
 				              	<div class="row">
 				              	 <div class="col-md-3">
 				              	 	<div class="form-group">
 				                    <label for="date">Where:</label>
 				                    <div class="form-field">
-				                      <input type="text" id="location" class="form-control" placeholder="Search Location">
+				                      <input type="text" name="country" id="location" class="form-control" placeholder="Search Location">
 				                    </div>
 				                  </div>
 				              	 </div>

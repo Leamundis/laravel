@@ -12,36 +12,25 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('home');
 });
 
-Route::get('voyages/{id}', function ($id) {
-    return ('On part en vacances à ' . $id);
-});
-
-Route::get('admin/voyages/{id}', function ($id) {
-    return ('On part en vacances à ' . $id . ' avec l\'admin');
-});
-
-Route::get('messages/{id}', function ($id) {
-    return ('On va à la convention numéro ' . $id);
-})->where('id', '[0-9]+');
-
+Route::get('travel/{id}', 'TravelController@show');
 Route::get('about', 'Page@about');
-Route::get('home', 'Page@home');
 Route::get('blog', 'Page@blog');
 Route::get('contact', 'Page@contact');
 Route::get('hotels', 'Page@hotels');
 Route::get('services', 'Page@services');
-Route::get('tours', 'Page@tours');
+Route::get('tours', 'TravelController@index');
+Route::post('tours', 'TravelController@search');
 
-Route::get('travelList', 'Travel@index');
+Route::prefix('admin')->middleware('admin')->group(function() {
+    Route::view('/', 'admin.index')->name('admin.index');
+    Route::resource('travels', 'AdminTravelController', ['as' => 'admin']);
+});
 
 
 
+Auth::routes();
 
-
-//Route::view('hotel-room', 'site/hotel-room');
-//Route::view('message', 'welcome');
-//Route::view('admin/voyages', 'welcome');
-//Route::view('voyages', 'welcome');
+Route::get('/home', 'Page@home')->name('home');

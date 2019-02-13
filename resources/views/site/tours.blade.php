@@ -8,111 +8,28 @@
 					<div class="col-md-9">
 						<div class="row">
 							<div class="wrap-division">
-								<div class="col-md-6 col-sm-6 animate-box">
-									<div class="tour">
-										<a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-1.jpg);">
-											<p class="price"><span>$1500</span> <small>/ 3 Days</small></p>
-										</a>
-										<span class="desc">
-											<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-											<h2><a href="tour-place.html">Family Tour in Greece</a></h2>
-											<span class="city">Athens, Greece</span>
-										</span>
-									</div>
-								</div>
+								@foreach ($travels as $travel)
+									@php 
+										$start_date = new Datetime($travel->start_date);
+										$end_date = new Datetime($travel->end_date);
+										$diff = $end_date->diff($start_date)->format("%a");
+									@endphp
+											<div class="col-md-6 col-sm-6 animate-box">
+												<div class="tour">
+													<a href="{{ 'travel/' . $travel->id }} " class="tour-img" style="background-image: url({{ $travel->picture }});">
+													<p class="price"><span>{{ $travel->cost . "$"}}</span> <small>/ {{ $diff . " jours" }}</small></p>
+													</a>
+													<span class="desc">
+														<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
+														<h2><a href="tour-place.html">{{ $travel->label }}</a></h2>
+														<span class="city">{{ $travel->country }}</span>
+													</span>
+												</div>
+											</div>
+			
+								@endforeach
 
-								<div class="col-md-6 col-sm-6 animate-box">
-									<div class="tour">
-										<a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-2.jpg);">
-											<p class="price"><span>$1500</span> <small>/ 3 Days</small></p>
-										</a>
-										<span class="desc">
-											<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-											<h2><a href="tour-place.html">Family Tour in Greece</a></h2>
-											<span class="city">Athens, Greece</span>
-										</span>
-									</div>
-								</div>
 
-								<div class="col-md-6 col-sm-6 animate-box">
-									<div class="tour">
-										<a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-3.jpg);">
-											<p class="price"><span>$1500</span> <small>/ 3 Days</small></p>
-										</a>
-										<span class="desc">
-											<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-											<h2><a href="tour-place.html">Family Tour in Greece</a></h2>
-											<span class="city">Athens, Greece</span>
-										</span>
-									</div>
-								</div>
-
-								<div class="col-md-6 col-sm-6 animate-box">
-									<div class="tour">
-										<a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-4.jpg);">
-											<p class="price"><span>$1500</span> <small>/ 3 Days</small></p>
-										</a>
-										<span class="desc">
-											<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-											<h2><a href="tour-place.html">Family Tour in Greece</a></h2>
-											<span class="city">Athens, Greece</span>
-										</span>
-									</div>
-								</div>
-
-								<div class="col-md-6 col-sm-6 animate-box">
-									<div class="tour">
-										<a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-5.jpg);">
-											<p class="price"><span>$1500</span> <small>/ 3 Days</small></p>
-										</a>
-										<span class="desc">
-											<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-											<h2><a href="tour-place.html">Family Tour in Greece</a></h2>
-											<span class="city">Athens, Greece</span>
-										</span>
-									</div>
-								</div>
-
-								<div class="col-md-6 col-sm-6 animate-box">
-									<div class="tour">
-										<a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-6.jpg);">
-											<p class="price"><span>$1500</span> <small>/ 3 Days</small></p>
-										</a>
-										<span class="desc">
-											<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-											<h2><a href="tour-place.html">Family Tour in Greece</a></h2>
-											<span class="city">Athens, Greece</span>
-										</span>
-									</div>
-								</div>
-
-								<div class="col-md-6 col-sm-6 animate-box">
-									<div class="tour">
-										<a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-7.jpg);">
-											<p class="price"><span>$1500</span> <small>/ 3 Days</small></p>
-										</a>
-										<span class="desc">
-											<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-											<h2><a href="tour-place.html">Family Tour in Greece</a></h2>
-											<span class="city">Athens, Greece</span>
-										</span>
-									</div>
-								</div>
-
-								<div class="col-md-6 col-sm-6 animate-box">
-									<div class="tour">
-										<a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-8.jpg);">
-											<p class="price"><span>$1500</span> <small>/ 3 Days</small></p>
-										</a>
-										<span class="desc">
-											<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-											<h2><a href="tour-place.html">Family Tour in Greece</a></h2>
-											<span class="city">Athens, Greece</span>
-										</span>
-									</div>
-								</div>
-							</div>
-						</div>
 						<div class="row">
 							<div class="col-md-12 text-center">
 								<ul class="pagination">
@@ -126,19 +43,21 @@
 							</div>
 						</div>
 					</div>
-
+				</div>
+			</div>
 					<!-- SIDEBAR-->
 					<div class="col-md-3">
 						<div class="sidebar-wrap">
 							<div class="side search-wrap animate-box">
 								<h3 class="sidebar-heading">Find your tour</h3>
-								<form method="post" class="colorlib-form">
+								<form method="post" class="colorlib-form" action="./tours">
+									@csrf
 				              	<div class="row">
 				              	 <div class="col-md-12">
 				              	 	<div class="form-group">
 				                    <label for="date">Where:</label>
 				                    <div class="form-field">
-				                      <input type="text" id="location" class="form-control" placeholder="Search Location">
+				                      <input type="text" id="location" name="country" class="form-control" placeholder="Search Location">
 				                    </div>
 				                  </div>
 				              	 </div>
@@ -159,7 +78,23 @@
 				                      <input type="text" id="date" class="form-control date" placeholder="Check-out date">
 				                    </div>
 				                  </div>
-				                </div>
+												</div>
+												<div class="col-md-12">
+														<div class="form-group">
+															<label for="max">Montant Max</label>
+															<div class="form-field">
+																<input type="text" id="date" name="max" class="form-control" placeholder="Montant Max">
+															</div>
+														</div>
+													</div>
+													<div class="col-md-12">
+															<div class="form-group">
+																<label for="min">Montant Min</label>
+																<div class="form-field">
+																	<input type="text" id="date" name="min" class="form-control" placeholder="Montant Min">
+																</div>
+															</div>
+														</div>
 				                <div class="col-md-12">
 				                  <div class="form-group">
 				                    <label for="guests">Guest</label>
